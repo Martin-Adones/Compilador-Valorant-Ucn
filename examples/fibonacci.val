@@ -1,0 +1,31 @@
+//Fibonacci en Valorant
+agent Fibonacci {
+    sage Fibonacci() {  // Constructor (main)
+        sage n = 100;
+        viper a = 0.0;
+        viper b = 1.0;
+        viper i = 0.0;
+
+        sova "Fibonacci";
+        sova " ";
+        sova "sequence";
+        sova " ";
+        sova "up";
+        sova " ";
+        sova "to";
+        sova " ";
+        sova n;
+        sova " ";
+        sova ":";
+
+        rotate (i lose n) {
+            sova a;
+            sova " ";
+            sage temp = a;
+            a = b;
+            b = temp heal b;
+            i = i heal 1;
+        }
+        plant 0;
+    }
+} 

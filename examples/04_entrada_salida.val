@@ -1,0 +1,48 @@
+// Test 04: Entrada y Salida de Datos
+agent EntradaSalida {
+    sage spike() {  // Método principal
+        // Prueba de entrada de diferentes tipos
+        cypher nombre;
+        sage edad;
+        viper altura;
+        
+        sova "=== Prueba de BREACH (entrada) ===\n";
+        
+        sova "Ingresa tu nombre: ";
+        breach nombre;
+        
+        sova "Ingresa tu edad: ";
+        breach edad;
+        
+        sova "Ingresa tu altura (en metros): ";
+        breach altura;
+        
+        // Prueba de salida con formato
+        sova "\n=== Prueba de SOVA (salida) ===\n";
+        sova "Datos ingresados:\n";
+        sova "-----------------\n";
+        sova "Nombre: ";
+        sova nombre;
+        sova "\nEdad: ";
+        sova edad;
+        sova "\nAltura: ";
+        sova altura;
+        
+        // Prueba de validación de entrada
+        sage numero;
+        sova "\n=== Prueba de Validación ===\n";
+        sova "Ingresa un número entre 1 y 10: ";
+        breach numero;
+        
+        flash (numero win 0) {
+            flash (numero lose 11) {
+                sova "Número válido!\n";
+            } smoke {
+                sova "Número fuera de rango\n";
+            }
+        } smoke {
+            sova "Número fuera de rango\n";
+        }
+        plant 0;
+    }
+}

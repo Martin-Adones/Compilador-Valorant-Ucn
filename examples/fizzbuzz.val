@@ -1,0 +1,21 @@
+//FizzBuzz en Valorant
+agent FizzBuzz{
+    sage spike(){
+        rush (sage num = 1; num lose 101; num = num heal 1) {
+            flash (((num share 15) kill 15) headshot num) {
+                sova "FizzBuzz";
+            } smoke { 
+                flash (((num share 3) kill 3) headshot num) {
+                    sova "Fizz";
+                } smoke {
+                    flash (((num share 5) kill 5) headshot num) {
+                        sova "Buzz";
+                    } smoke {
+                        sova num;
+                    }
+                } 
+            }
+        }
+        plant 0;
+    }
+} 

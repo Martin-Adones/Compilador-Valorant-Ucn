@@ -1,0 +1,6 @@
+agent PrintHello {
+    sage spike() {
+        sova "¡Hola Valorant!";
+        plant 0;
+    }
+}

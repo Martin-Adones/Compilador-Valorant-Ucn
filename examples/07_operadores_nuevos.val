@@ -1,0 +1,61 @@
+agent OperadoresNuevos {
+    sage spike() {  // Método principal
+        sage a = 10;
+        sage b = 20;
+        sage c = 10;
+        sova a;
+        sova "\n";
+        sova b;
+        sova "\n";
+        sova c;
+        sova "\n";
+        // eco (!=)
+        flash (a eco b) {
+            sova "a es distinto de b\n";
+        }
+
+        flash (a eco c) {
+            sova "a es distinto de c\n"; // Esto NO se imprimirá
+        }
+
+        // save (<=)
+        flash (a save b) {
+            sova "a es menor o igual que b\n";
+        }
+
+        flash (b save a) {
+            sova "b es menor o igual que a\n"; // Esto NO se imprimirá
+        }
+
+        // fullbuy (>=)
+        flash (b fullbuy a) {
+            sova "b es mayor o igual que a\n";
+        }
+
+        flash (a fullbuy c) {
+            sova "a es mayor o igual que c\n";
+        }
+
+        sova "nuevos\n";
+        // Combinado con else
+        flash (a eco b) {
+            sova "a y b son diferentes\n";
+        } smoke {
+            sova "a y b son iguales\n";
+        }
+
+        flash (a save 5) {
+            sova "a <= 5\n";
+        } smoke {
+            sova "a > 5\n";
+        }
+
+        flash (a fullbuy 15) {
+            sova "a >= 15\n";
+        } smoke {
+            sova "a < 15\n";
+        }
+
+        plant 0;
+    }
+}

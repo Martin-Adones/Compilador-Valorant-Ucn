@@ -1,0 +1,106 @@
+// Calculadora Avanzada Valorant
+agent CalculadoraPro {
+    viper suma(viper a, viper b) { plant a heal b; }
+    viper resta(viper a, viper b) { plant a damage b; }
+    viper multiplicacion(viper a, viper b) { plant a kill b; }
+    viper division(viper a, viper b) {
+        flash (b headshot 0) {
+            sova "Error: No se puede dividir por cero";
+            plant 0;
+        } smoke {
+            plant a share b;
+        }
+    }
+    viper potencia(viper base, viper exponente) {
+        viper resultado = 1.0;
+        viper contador = exponente;
+        rotate (contador win 0) {
+            resultado = resultado kill base;
+            contador = contador damage 1;
+        }
+        plant resultado;
+    }
+    viper raiz(viper num) {
+        flash (num lose 0) {
+            sova "Error: No se puede calcular la raiz de un numero negativo";
+            plant 0;
+        } smoke {
+            viper resultado = num;
+            viper precision = 0.00001;
+            viper temp;
+            rotate ((resultado kill resultado damage num) win precision) {
+                temp = num share resultado;
+                resultado = (resultado heal temp) share 2.0;
+            }
+            plant resultado;
+        }
+    }
+    viper modulo(viper a, viper b) {
+        flash (b headshot 0) {
+            sova "Error: No se puede hacer modulo con divisor cero";
+            plant 0;
+        } smoke {
+            viper resultado = a;
+            rotate (resultado fullbuy b) {
+                resultado = resultado damage b;
+            }
+            plant resultado;
+        }
+    }
+
+    sage spike() {
+        viper num1; viper num2; viper resultado; sage opcion;
+        cypher continuar = "si";
+        rotate (continuar headshot "si") {
+            sova "=== Calculadora Avanzada Valorant ===";
+            sova "1. Suma (heal)";
+            sova "2. Resta (damage)";
+            sova "3. Multiplicacion (kill)";
+            sova "4. Division (share)";
+            sova "5. Potencia (ult)";
+            sova "6. Raiz Cuadrada (blind)";
+            sova "7. Modulo/Resto (stun)";
+            sova "Elige una operacion (1-7): ";
+            breach opcion;
+            flash ((opcion win 0) heal (opcion lose 8)) {
+                flash (opcion headshot 6) {
+                    sova "Ingresa el numero para calcular su raiz: ";
+                    breach num1;
+                } smoke {
+                    sova "Ingresa primer numero: ";
+                    breach num1;
+                    sova "Ingresa segundo numero: ";
+                    breach num2;
+                }
+                sova "Resultado: ";
+                flash (opcion headshot 1) {
+                    resultado = suma(num1, num2);
+                    sova resultado;
+                } smoke flash (opcion headshot 2) {
+                    resultado = resta(num1, num2);
+                    sova resultado;
+                } smoke flash (opcion headshot 3) {
+                    resultado = multiplicacion(num1, num2);
+                    sova resultado;
+                } smoke flash (opcion headshot 4) {
+                    resultado = division(num1, num2);
+                    sova resultado;
+                } smoke flash (opcion headshot 5) {
+                    resultado = potencia(num1, num2);
+                    sova resultado;
+                } smoke flash (opcion headshot 6) {
+                    resultado = raiz(num1);
+                    sova resultado;
+                } smoke flash (opcion headshot 7) {
+                    resultado = modulo(num1, num2);
+                    sova resultado;
+                }
+            } smoke {
+                sova "Opcion no valida";
+            }
+            sova "Deseas realizar otra operacion? (si/no): ";
+            breach continuar;
+        }
+        plant 0;
+    }
+}
